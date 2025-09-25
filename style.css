@@ -1,0 +1,125 @@
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* HEADER */
+.header header {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #fff;
+  padding: 40px 20px;
+  border-radius: 12px 12px 0 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header .title-site {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.header .description {
+  margin-top: 8px;
+  font-size: 1.2rem;
+}
+
+/* NAVIGATION */
+nav.menus {
+  background: #fff;
+  border-radius: 0 0 12px 12px;
+  padding: 10px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+nav.menus ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav.menus ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav.menus ul li a {
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: 0.3s;
+  color: #e74c3c;
+  font-weight: 500;
+}
+
+nav.menus ul li a:hover {
+  background: #e74c3c;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ARTICLE POSTS */
+article.posts {
+  padding: 20px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.title-post {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #e74c3c;
+}
+
+.meta-post {
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+  color: #777;
+}
+
+/* SIDEBAR */
+aside.widgets {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.widget-title {
+  border-bottom: 3px solid #e74c3c;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+aside.widgets ul {
+  list-style: none;
+  padding: 0;
+}
+
+aside.widgets li {
+  margin-bottom: 8px;
+}
+
+aside.widgets a {
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s;
+}
+
+aside.widgets a:hover {
+  color: #e74c3c;
+  padding-left: 5px;
+}
+
+/* FOOTER */
+footer.copyright {
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
