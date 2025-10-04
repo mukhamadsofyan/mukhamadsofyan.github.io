@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Membuat Template Website Bootstrap</title>
+    <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .calc-card {
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .btn-op {
+            width: 65px;
+            height: 45px;
+            margin: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #hasil {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <div class="row">
+            <div class="col-md-12 header" id="site-header">
+                <header>
+                    <h1 class="title-site">Belajar Bootstrap</h1>
+                    <p class="description">Belajar Membuat Template Website Dengan Bootstrap</p>
+                </header>
+                <nav class="menus">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="form.html">Form Contoh</a></li>
+                        <li><a href="tabel.html">Table Contoh</a></li>
+                        <li><a href="kalkulator.html">Portfolio</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="portofolio.html">Portfolio</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="row mt-4">
+            <div class="col-md-8 articles" id="site-content">
+                <!-- Kalkulator -->
+                <div class="card calc-card p-4">
+                    <h2 class="text-center mb-4">Kalkulator Mini</h2>
+                    <form name="kirim">
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control form-control-lg" name="bil_1" placeholder="Masukkan bilangan pertama">
+                        </div>
+                        <div class="form-group mb-4">
+                            <input type="number" class="form-control form-control-lg" name="bil_2" placeholder="Masukkan bilangan kedua">
+                        </div>
+                        <div class="d-flex justify-content-center flex-wrap">
+                            <button type="button" class="btn btn-success btn-op" onclick="hitung('tambah')">+</button>
+                            <button type="button" class="btn btn-danger btn-op" onclick="hitung('kurang')">-</button>
+                            <button type="button" class="btn btn-primary btn-op" onclick="hitung('kali')">×</button>
+                            <button type="button" class="btn btn-warning btn-op" onclick="hitung('bagi')">÷</button>
+                        </div>
+                    </form>
+                    <div id="hasilBox" class="alert alert-info text-center mt-4" role="alert">
+                        Hasil: -
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <div class="col-md-4 sidebar" id="site-sidebar">
+                <aside class="widgets">
+                    <h3 class="widget-title">Menu</h3>
+                    <ul>
+                        <li><a href="#">Olahraga</a></li>
+                        <li><a href="#">Politik</a></li>
+                        <li><a href="#">Hiburan</a></li>
+                        <li><a href="#">Games</a></li>
+                        <li><a href="#">Sepakbola</a></li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="row mt-4">
+            <div class="col-md-12 footer" id="site-footer">
+                <footer class="copyright text-center">
+                    <p>&copy; 2025 Belajar Bootstrap. Mukhamad Sofyan - 135.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function hitung(operasi) {
+            var val1 = parseFloat(document.kirim.bil_1.value);
+            var val2 = parseFloat(document.kirim.bil_2.value);
+            var hasil = 0;
+
+            if (isNaN(val1) || isNaN(val2)) {
+                document.getElementById("hasilBox").className = "alert alert-danger text-center mt-4";
+                document.getElementById("hasilBox").innerText = "⚠️ Masukkan angka yang valid!";
+                return;
+            }
+
+            switch (operasi) {
+                case 'tambah': hasil = val1 + val2; break;
+                case 'kurang': hasil = val1 - val2; break;
+                case 'kali': hasil = val1 * val2; break;
+                case 'bagi':
+                    if (val2 === 0) {
+                        document.getElementById("hasilBox").className = "alert alert-warning text-center mt-4";
+                        document.getElementById("hasilBox").innerText = "❌ Tidak bisa dibagi 0!";
+                        return;
+                    }
+                    hasil = val1 / val2;
+                    break;
+            }
+
+            document.getElementById("hasilBox").className = "alert alert-success text-center mt-4";
+            document.getElementById("hasilBox").innerText = "✅ Hasil: " + hasil;
+        }
+    </script>
+
+    <script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
